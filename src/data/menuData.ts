@@ -45,14 +45,14 @@ export const menuData: MenuCategory[] = [
         name: 'Bauru',
         description: 'Pão, presunto, queijo e tomate.',
         price: 8.00,
-        image: '/bauru-pao-frances.png'
+        image: '/misto-quente.png'
       },
       {
         id: 'misto-quente',
         name: 'Misto Quente',
         description: 'O clássico pão com presunto e queijo na chapa.',
         price: 8.00,
-        image: '/misto-quente.png'
+        image: '/bauru-pao-frances.png'
       },
       {
         id: 'pao-ovo',
