@@ -235,7 +235,7 @@ export const menuData: MenuCategory[] = [
       },
       {
         id: 'imperio-helles',
-        name: 'Império Helles (Lata)',
+        name: 'Império Helles',
         description: '330ml.',
         price: 9.00,
         image: '/imperio-helles.png',
