@@ -70,7 +70,11 @@ export default function App() {
       </main>
 
       <footer className="mt-8 sm:mt-12 py-6 sm:py-8 text-center text-zinc-600 text-[10px] sm:text-xs uppercase tracking-widest">
-        <p>Feito com qualidade para você ❤️</p>
+        <div className="space-y-1">
+          <p className="font-medium">Benjamim Guimarães, 314 - Centro</p>
+          <p className="text-amber-600">@cafeeconversa.prata</p>
+          <p className="font-medium">(34) 99642-6784</p>
+        </div>
       </footer>
 
       <button
