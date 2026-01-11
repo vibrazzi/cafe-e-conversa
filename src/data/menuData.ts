@@ -201,7 +201,7 @@ export const menuData: MenuCategory[] = [
         id: 'porcao-figado',
         name: 'Porção de Fígado',
         description: 'Fígado acebolado, suculento e bem temperado.',
-        price: 18.00,
+        price: 35.00,
         image: '/figado.png',
       }
     ]
