@@ -1,0 +1,309 @@
+@import "tailwindcss";
+
+/* ============================================
+   RESPONSIVE UTILITIES & BREAKPOINTS
+   ============================================ */
+
+/* Tailwind Breakpoints (já configurados):
+   sm: 640px
+   md: 768px
+   lg: 1024px
+   xl: 1280px
+   2xl: 1536px
+*/
+
+/* ============================================
+   MOBILE-FIRST APPROACH
+   ============================================ */
+
+/* Scrollbar Hide Utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Glass Morphism Card */
+.glass-card {
+  background: rgba(28, 15, 7, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Smooth Transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   RESPONSIVE TYPOGRAPHY SCALE
+   ============================================ */
+
+/* Mobile First Typography */
+@media (max-width: 640px) {
+  /* Extra small screens */
+  h1 {
+    @apply text-2xl;
+  }
+
+  h2 {
+    @apply text-xl;
+  }
+
+  h3 {
+    @apply text-lg;
+  }
+
+  p {
+    @apply text-sm;
+  }
+
+  .text-xs {
+    @apply text-[10px];
+  }
+}
+
+/* Small screens and up */
+@media (min-width: 640px) {
+  h1 {
+    @apply text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  p {
+    @apply text-base;
+  }
+}
+
+/* Medium screens and up */
+@media (min-width: 768px) {
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  p {
+    @apply text-lg;
+  }
+}
+
+/* ============================================
+   RESPONSIVE SPACING
+   ============================================ */
+
+/* Container Padding */
+.container-responsive {
+  @apply px-3 sm:px-4 md:px-6 lg:px-8;
+}
+
+/* Gap Utilities */
+.gap-responsive {
+  @apply gap-2 sm:gap-3 md:gap-4 lg:gap-6;
+}
+
+/* Margin Utilities */
+.my-responsive {
+  @apply my-4 sm:my-6 md:my-8 lg:my-10;
+}
+
+/* ============================================
+   RESPONSIVE GRID LAYOUTS
+   ============================================ */
+
+/* 1 Column Mobile, 2 Columns Tablet, 3 Columns Desktop */
+.grid-responsive-3 {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+}
+
+/* 1 Column Mobile, 2 Columns Tablet+ */
+.grid-responsive-2 {
+  @apply grid grid-cols-1 sm:grid-cols-2;
+}
+
+/* ============================================
+   RESPONSIVE IMAGES
+   ============================================ */
+
+/* Responsive Image Container */
+.image-responsive {
+  @apply w-full h-auto max-w-full;
+}
+
+/* Aspect Ratio 1:1 */
+.aspect-square-responsive {
+  @apply w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28;
+}
+
+/* Aspect Ratio 16:9 */
+.aspect-video-responsive {
+  @apply w-full h-auto;
+  aspect-ratio: 16 / 9;
+}
+
+/* ============================================
+   RESPONSIVE BUTTONS
+   ============================================ */
+
+/* Button Size Responsive */
+.btn-responsive {
+  @apply px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2.5;
+}
+
+/* Touch Target (min 44x44px for mobile) */
+.touch-target {
+  @apply min-h-11 min-w-11;
+}
+
+/* ============================================
+   RESPONSIVE NAVIGATION
+   ============================================ */
+
+/* Sticky Header Height */
+.sticky-header {
+  @apply sticky top-0 z-30;
+}
+
+/* Navigation Pill */
+.nav-pill {
+  @apply px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wide whitespace-nowrap transition-all duration-300;
+}
+
+/* ============================================
+   RESPONSIVE FLEXBOX
+   ============================================ */
+
+/* Flex Direction Responsive */
+.flex-responsive {
+  @apply flex flex-col sm:flex-row;
+}
+
+/* ============================================
+   HIDE/SHOW UTILITIES
+   ============================================ */
+
+/* Show only on mobile */
+.show-mobile {
+  @apply block sm:hidden;
+}
+
+/* Hide on mobile */
+.hide-mobile {
+  @apply hidden sm:block;
+}
+
+/* Show only on tablet */
+.show-tablet {
+  @apply hidden sm:block md:hidden;
+}
+
+/* Show only on desktop */
+.show-desktop {
+  @apply hidden md:block;
+}
+
+/* ============================================
+   RESPONSIVE SHADOWS
+   ============================================ */
+
+.shadow-responsive {
+  @apply shadow-sm sm:shadow-md md:shadow-lg;
+}
+
+/* ============================================
+   RESPONSIVE BORDERS
+   ============================================ */
+
+.border-responsive {
+  @apply border-0 sm:border;
+}
+
+/* ============================================
+   RESPONSIVE ANIMATIONS
+   ============================================ */
+
+@keyframes slideInMobile {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in-mobile {
+  animation: slideInMobile 0.3s ease-out;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .no-print {
+    display: none;
+  }
+
+  .print-only {
+    display: block;
+  }
+
+  body {
+    @apply bg-white text-black;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/* Focus Visible for Keyboard Navigation */
+button:focus-visible,
+a:focus-visible {
+  @apply outline-2 outline-offset-2 outline-amber-500;
+}
+
+/* Reduce Motion for Users Who Prefer It */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: more) {
+  .glass-card {
+    background: rgba(28, 15, 7, 0.8);
+  }
+
+  button {
+    border-width: 2px;
+  }
+}
+
+/* Dark Mode (já implementado, mas reforçado) */
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-[#0f0804] text-[#f4f4f5];
+  }
+}
