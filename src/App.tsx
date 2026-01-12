@@ -64,14 +64,14 @@ export default function App() {
           Onde cada conversa começa com um bom café
         </p>
 
-        <nav className="relative py-3 sm:py-4 px-3 sm:px-4 border-b border-white/5 rounded-lg mx-auto max-w-6xl">
-          <div className="flex gap-2 md:gap-3 overflow-x-auto pb-2 scrollbar-hide justify-center flex-wrap sm:flex-nowrap">
+        <nav className="relative py-3 sm:py-4 px-4 sm:px-6 border-b border-white/5 rounded-lg mx-auto max-w-7xl">
+          <div className="flex gap-2 md:gap-3 pb-2 scrollbar-hide justify-center flex-wrap">
             {menuData.map((category) => (
               <button
                 key={category.id}
                 onClick={() => scrollToCategory(category.id)}
                 className={`
-                  px-3 sm:px-4 md:px-6 py-2 rounded-full text-xs md:text-sm font-bold uppercase tracking-wide whitespace-nowrap transition-all duration-300
+                  px-4 sm:px-5 md:px-6 py-2.5 rounded-full text-xs md:text-sm font-bold uppercase tracking-wide whitespace-nowrap transition-all duration-300
                   ${activeCategory === category.id
                     ? 'bg-amber-500 text-[#0f0804] shadow-lg shadow-amber-500/20'
                     : 'bg-[#1c0f07] text-amber-500/70 border border-amber-500/10 hover:border-amber-500/30'}

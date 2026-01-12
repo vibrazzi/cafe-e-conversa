@@ -9,7 +9,7 @@ export const menuData: MenuCategory[] = [
         id: 'presunto-mussarela',
         name: 'Presunto e Mussarela',
         description: 'Salgado assado com presunto e mussarela.',
-        price: 12.00,
+        price: 9.00,
         image: '/salgado_presunto_mussarela.png'
       },
       {
@@ -23,7 +23,7 @@ export const menuData: MenuCategory[] = [
         id: 'pastelao-frango-bacon',
         name: 'Pastelão Frango e Bacon',
         description: '',
-        price: 12.00,
+        price: 9.00,
         image: '/pastelao.png'
       },
       {
@@ -44,14 +44,14 @@ export const menuData: MenuCategory[] = [
         id: 'calabresa',
         name: 'Calabresa',
         description: 'Salgado assado com calabresa.',
-        price: 10.00,
+        price: 9.00,
         image: '/salgado_calabresa.png'
       },
       {
         id: 'hamburger',
         name: 'Hambúrguer',
         description: 'Salgado assado com hambúrguer.',
-        price: 11.00,
+        price: 9.00,
         image: '/hamburger.png'
       }
     ]
@@ -119,7 +119,7 @@ export const menuData: MenuCategory[] = [
         id: 'enroladinhos',
         name: 'Enroladinhos: Salsicha ou Presunto e Mussarela',
         description: '',
-        price: 8.00,
+        price: 9.00,
         image: '/enroladinhos.png'
       },
       {
