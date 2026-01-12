@@ -2,43 +2,70 @@ import { MenuCategory } from '../types';
 
 export const menuData: MenuCategory[] = [
   {
-    id: 'lanches',
-    title: 'Salgados & Lanches',
+    id: 'assados',
+    title: 'Assados',
     items: [
       {
-        id: 'salgado-assado',
-        name: 'Salgado Assado',
-        description: 'Diversos',
-        price: 9.00,
-        image: '/salgado-assado.png'
+        id: 'presunto-mussarela',
+        name: 'Presunto e Mussarela',
+        description: 'Salgado assado com presunto e mussarela.',
+        price: 12.00,
+        image: '/salgado_presunto_mussarela.png'
       },
       {
-        id: 'salgado-frito',
-        name: 'Salgado Frito',
-        description: 'Diversos',
-        price: 9.00,
-        image: '/coxinha.png'
-      },
-      {
-        id: 'sanduiche-natural',
-        name: 'Sanduíche Natural',
-        description: 'Opção leve e saudável para seu lanche.',
-        price: 9.00,
-        image: '/sanduiche-natural.png'
-      },
-      {
-        id: 'torta-frango',
+        id: 'torta-frango-item',
         name: 'Torta de Frango',
         description: 'Recheio cremoso.',
         price: 10.00,
         image: '/torta-frango.png'
       },
       {
-        id: 'panqueca',
-        name: 'Panqueca (Unidade)',
-        description: 'Massa artesanal com recheio especial.',
-        price: 15.00,
-        image: '/panqueca.png'
+        id: 'pastelao-frango-bacon',
+        name: 'Pastelão Frango e Bacon',
+        description: '',
+        price: 12.00,
+        image: '/pastelao.png'
+      },
+      {
+        id: 'esfirra-carne-bacon',
+        name: 'Esfirras: Carne ou Bacon',
+        description: 'Escolha entre carne moída ou bacon, sempre deliciosa.',
+        price: 9.00,
+        image: '/esfirra.png'
+      },
+      {
+        id: 'salsicha',
+        name: 'Salsicha',
+        description: 'Salgado assado com salsicha.',
+        price: 9.00,
+        image: '/salgado_salsicha.png'
+      },
+      {
+        id: 'calabresa',
+        name: 'Calabresa',
+        description: 'Salgado assado com calabresa.',
+        price: 10.00,
+        image: '/salgado_calabresa.png'
+      },
+      {
+        id: 'hamburger',
+        name: 'Hambúrguer',
+        description: 'Salgado assado com hambúrguer.',
+        price: 11.00,
+        image: '/hamburger.png'
+      }
+    ]
+  },
+  {
+    id: 'lanches',
+    title: 'Lanches',
+    items: [
+      {
+        id: 'sanduiche-natural',
+        name: 'Sanduíche Natural',
+        description: 'Opção leve e saudável para seu lanche.',
+        price: 9.00,
+        image: '/sanduiche-natural.png'
       },
       {
         id: 'bauru',
@@ -67,6 +94,60 @@ export const menuData: MenuCategory[] = [
         description: 'Pão, salsicha e acompanhamentos da casa.',
         price: 10.00,
         image: '/cachorro-quente.png',
+      }
+    ]
+  },
+  {
+    id: 'fritos',
+    title: 'Fritos',
+    items: [
+      {
+        id: 'quibe',
+        name: 'Quibe',
+        description: 'Salgado frito crocante.',
+        price: 9.00,
+        image: '/quibe.png'
+      },
+      {
+        id: 'coxinha',
+        name: 'Coxinha',
+        description: 'Salgado frito recheado.',
+        price: 9.00,
+        image: '/coxinha.png'
+      },
+      {
+        id: 'enroladinhos',
+        name: 'Enroladinhos: Salsicha ou Presunto e Mussarela',
+        description: '',
+        price: 8.00,
+        image: '/enroladinhos.png'
+      },
+      {
+        id: 'risole',
+        name: 'Risole',
+        description: 'Salgado frito recheado.',
+        price: 9.00,
+        image: '/risole.png'
+      },
+      {
+        id: 'maia',
+        name: 'Maia',
+        description: 'Salgado frito tradicional.',
+        price: 9.00,
+        image: '/maia.png'
+      }
+    ]
+  },
+  {
+    id: 'panqueca',
+    title: 'Panqueca',
+    items: [
+      {
+        id: 'panqueca-item',
+        name: 'Panqueca (Unidade)',
+        description: 'Massa artesanal com recheio especial.',
+        price: 15.00,
+        image: '/panqueca.png'
       }
     ]
   },
