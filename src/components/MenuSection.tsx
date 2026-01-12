@@ -1,6 +1,65 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Sandwich, UtensilsCrossed, Coffee, Flame, Beer, Heart, Pencil, Trash2, Star } from 'lucide-react';
 import { MenuCategory, MenuItem } from '../types';
+
+interface MenuItemRowProps {
+  item: MenuItem;
+  isAdmin?: boolean;
+}
+
+const LazyImage: React.FC<{ src: string; alt: string; className: string }> = ({ src, alt, className }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1, rootMargin: '50px' }
+    );
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleLoad = () => setIsLoaded(true);
+  const handleError = () => setHasError(true);
+
+  return (
+    <div ref={imgRef} className={`relative ${className}`}>
+      {!isLoaded && !hasError && (
+        <div className="absolute inset-0 bg-[#1c0f07] animate-pulse rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 border-2 border-amber-500 border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      )}
+      {isInView && (
+        <img
+          src={src}
+          alt={alt}
+          className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
+          onLoad={handleLoad}
+          onError={handleError}
+        />
+      )}
+      {hasError && (
+        <div className="absolute inset-0 bg-[#1c0f07] rounded-lg flex items-center justify-center">
+          <div className="text-amber-500 text-xs text-center p-2">
+            Imagem<br/>indisponível
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
 
 interface MenuItemRowProps {
   item: MenuItem;
@@ -20,11 +79,10 @@ const MenuItemRow: React.FC<MenuItemRowProps> = ({ item, isAdmin }) => {
       )}
 
       <div className="relative w-full sm:w-28 md:w-32 h-56 sm:h-28 md:h-32 shrink-0 overflow-hidden rounded-lg sm:rounded-xl bg-[#1c0f07]">
-        <img
+        <LazyImage
           src={imageSrc}
           alt={item.name}
-          className={`w-full h-full object-cover object-[50%_30%] transition-transform duration-700 group-hover:scale-110 ${hasImage ? '' : 'opacity-30'}`}
-          loading="lazy"
+          className="w-full h-full object-cover object-[50%_30%] transition-transform duration-700 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>

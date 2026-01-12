@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MenuSection } from './components/MenuSection';
 import { menuData } from './data/menuData';
 import { ChevronUp } from 'lucide-react';
@@ -6,6 +6,29 @@ import { ChevronUp } from 'lucide-react';
 export default function App() {
   const [activeCategory, setActiveCategory] = useState<string>(menuData[0].id);
   const isAdmin = false;
+
+  useEffect(() => {
+    const preloadImages = () => {
+      const logoImg = new Image();
+      logoImg.src = '/logo.png';
+
+      const heroImg = new Image();
+      heroImg.src = '/hero-banner.jpg';
+
+      const criticalImages = menuData
+        .slice(0, 2)
+        .flatMap(category => category.items.slice(0, 3))
+        .map(item => item.image)
+        .filter(Boolean);
+
+      criticalImages.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+    };
+
+    preloadImages();
+  }, []);
 
   const scrollToCategory = (categoryId: string) => {
     setActiveCategory(categoryId);
